@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="UserData" type="net.hakiki.apps.simpledatabinding.models.UserModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:paddingBottom="10px"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+                android:text="OUTPUT"
+                android:textAlignment="center"
+                android:fontFamily="sans-serif-black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvOutputTitle"/>
+        <TextView
+
+                android:text="@{UserData.firstname}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvFirtName"/>
+        <TextView
+                android:text="@{UserData.lastname}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvLastName"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/linearLayout">
+        <EditText
+                android:hint="Your First Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/edtFirstname"/>
+        <EditText
+                android:hint="Your Last  Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/edtLastName"/>
+        <Button
+                android:text="Change Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnChange"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
+</layout>
